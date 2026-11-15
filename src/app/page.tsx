@@ -41,20 +41,20 @@ export default function Home() {
   return (
     <div className="relative h-[100dvh] max-h-[100dvh] w-full bg-[#fbdbc6] text-[#1c1815] flex flex-col justify-between overflow-hidden selection:bg-[#1c1815] selection:text-[#fbdbc6]">
       
-      {/* FULL SCREEN GK SKY ARTWORK BACKGROUND - ZERO WHITE */}
-      <div className="pointer-events-none fixed inset-0 flex items-center justify-center -z-10 overflow-hidden select-none">
+      {/* PURE ARTWORK BACKDROP - NO PINK OVERLAYS, NO BLEND DISTORTIONS */}
+      <div className="pointer-events-none fixed inset-0 flex items-center justify-center -z-10 select-none overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/gksky-logo.jpg"
           alt="GK Sky Artwork Backdrop"
-          className="w-full h-full object-contain opacity-45 mix-blend-multiply filter blur-[1px] scale-100 sm:scale-105"
+          className="w-full h-full max-w-[950px] max-h-[85vh] object-contain opacity-80"
         />
       </div>
 
       {/* Top Navbar */}
       <header className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 pt-4 sm:pt-6 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl overflow-hidden shadow-sm border border-[#1c1815]/15 bg-[#fbdbc6] flex items-center justify-center">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl overflow-hidden shadow-sm border border-[#1c1815]/20 bg-[#fbdbc6] flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/gksky-logo.jpg"
@@ -65,17 +65,17 @@ export default function Home() {
           <div>
             <h2 className="text-sm sm:text-base font-bold tracking-tight text-[#1c1815] flex items-center gap-1.5">
               GK Sky
-              <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-full bg-[#1c1815]/10 text-[#1c1815] border border-[#1c1815]/15 font-semibold tracking-wider">
+              <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-full bg-[#1c1815]/10 text-[#1c1815] border border-[#1c1815]/20 font-semibold tracking-wider">
                 Official
               </span>
             </h2>
-            <p className="text-[11px] text-[#554741]">Gagan Kumar</p>
+            <p className="text-[11px] text-[#554741] font-medium">Gagan Kumar</p>
           </div>
         </div>
 
         {/* Telegram Direct Header Action */}
         <div className="flex items-center gap-2">
-          <div className="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1c1815]/8 border border-[#1c1815]/15 text-[#1c1815] text-[11px] font-medium">
+          <div className="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/15 text-[#1c1815] text-[11px] font-medium">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c85f40] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#c85f40]"></span>
@@ -96,37 +96,37 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Single-Screen Hero (No White Cards, Sitting Directly On Artwork) */}
+      {/* Main Single-Screen Hero (Directly Over Artwork, No Distortions) */}
       <main className="relative z-10 w-full max-w-4xl mx-auto px-5 sm:px-8 my-auto text-center flex-1 flex flex-col items-center justify-center space-y-4 sm:space-y-6 shrink min-h-0">
         
-        {/* Subtle Status Pill */}
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#1c1815]/8 border border-[#1c1815]/15 text-[#1c1815] text-[11px] sm:text-xs font-medium">
+        {/* Status Pill */}
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 text-[#1c1815] text-[11px] sm:text-xs font-semibold backdrop-blur-xs">
           <Sparkles className="w-3 h-3 text-[#c85f40]" />
           <span>New Official Website &bull; In Active Development</span>
         </div>
 
         {/* Primary Headline */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1c1815] leading-[1.08] max-w-3xl">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1c1815] leading-[1.08] max-w-3xl drop-shadow-[0_1px_1px_rgba(251,219,198,0.8)]">
           Something exceptional is yet to come.
         </h1>
 
         {/* Required One-Row Tagline */}
-        <p className="text-xs sm:text-base lg:text-lg text-[#1c1815] font-semibold tracking-tight whitespace-normal sm:whitespace-nowrap px-2">
-          This is the new official digital home of <span className="underline decoration-[#c85f40]/60 underline-offset-4">Gagan Kumar</span> (<span className="text-[#c85f40]">GK Sky</span>).
+        <p className="text-xs sm:text-base lg:text-lg text-[#1c1815] font-bold tracking-tight whitespace-normal sm:whitespace-nowrap px-2 drop-shadow-[0_1px_1px_rgba(251,219,198,0.8)]">
+          This is the new official digital home of <span className="underline decoration-[#c85f40] underline-offset-4">Gagan Kumar</span> (<span className="text-[#c85f40]">GK Sky</span>).
         </p>
 
-        {/* Minimal SEO Badges (No White Backgrounds) */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 text-[11px] sm:text-xs text-[#2b221e] pt-1">
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/8 border border-[#1c1815]/15 font-medium">
+        {/* Minimal SEO Badges */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 text-[11px] sm:text-xs text-[#1c1815] font-semibold pt-1">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20">
             Web Developer
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/8 border border-[#1c1815]/15 font-medium">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20">
             MERN Stack
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/8 border border-[#1c1815]/15 font-medium">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20">
             App Developer
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/8 border border-[#1c1815]/15 font-medium flex items-center gap-1">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 flex items-center gap-1">
             <MapPin className="w-3 h-3 text-[#c85f40]" />
             Bangalore
           </span>
@@ -139,7 +139,7 @@ export default function Home() {
             href={telegramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl bg-[#1c1815] text-[#fbdbc6] font-medium text-xs sm:text-sm shadow-md hover:bg-[#2e2622] transition-all duration-200 active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl bg-[#1c1815] text-[#fbdbc6] font-semibold text-xs sm:text-sm shadow-md hover:bg-[#2e2622] transition-all duration-200 active:scale-[0.98]"
           >
             <TelegramIcon className="w-3.5 h-3.5 text-[#fbdbc6]" />
             <span>Telegram</span>
@@ -149,7 +149,7 @@ export default function Home() {
           {/* Send Email Action */}
           <a
             href={`mailto:${email}`}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/10 hover:bg-[#1c1815]/15 border border-[#1c1815]/20 text-[#1c1815] font-medium text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/12 hover:bg-[#1c1815]/18 border border-[#1c1815]/25 text-[#1c1815] font-semibold text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
           >
             <Mail className="w-3.5 h-3.5 text-[#c85f40]" />
             <span>Email</span>
@@ -158,13 +158,13 @@ export default function Home() {
           {/* Copy Email Button */}
           <button
             onClick={handleCopy}
-            className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/8 hover:bg-[#1c1815]/15 border border-[#1c1815]/20 text-[#1c1815] font-medium text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/10 hover:bg-[#1c1815]/15 border border-[#1c1815]/25 text-[#1c1815] font-semibold text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
             title="Copy email address"
           >
             {copied ? (
               <>
-                <Check className="w-3.5 h-3.5 text-emerald-700" />
-                <span className="text-emerald-900 font-semibold text-xs">Copied!</span>
+                <Check className="w-3.5 h-3.5 text-emerald-800" />
+                <span className="text-emerald-950 font-bold text-xs">Copied!</span>
               </>
             ) : (
               <>
@@ -176,15 +176,15 @@ export default function Home() {
         </div>
 
         {/* Minimal Under-Construction Note */}
-        <div className="pt-1 flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-[#5f5049]">
+        <div className="pt-1 flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-[#554741] font-medium">
           <Clock className="w-3 h-3 text-[#c85f40]" />
           <span>Under Construction &bull; Launching 2026</span>
         </div>
 
       </main>
 
-      {/* Clean Minimal Footer (Zero White) */}
-      <footer className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 py-3 sm:py-4 border-t border-[#1c1815]/15 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#5f5049] shrink-0">
+      {/* Clean Minimal Footer */}
+      <footer className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 py-3 sm:py-4 border-t border-[#1c1815]/15 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#554741] font-medium shrink-0">
         <div>
           &copy; 2026 Gagan Kumar (GK Sky) &bull; All rights reserved.
         </div>
@@ -193,7 +193,7 @@ export default function Home() {
             href={telegramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#1c1815] transition-colors flex items-center gap-1 font-mono"
+            className="hover:text-[#1c1815] transition-colors flex items-center gap-1 font-mono font-bold"
           >
             <span>@{telegramUsername}</span>
             <ArrowUpRight className="w-3 h-3 opacity-60" />
