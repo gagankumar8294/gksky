@@ -39,15 +39,15 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-[100dvh] max-h-[100dvh] w-full bg-[#fbdbc6] text-[#1c1815] flex flex-col justify-between overflow-hidden selection:bg-[#1c1815] selection:text-[#fbdbc6]">
+    <div className="relative h-[100dvh] max-h-[100dvh] w-full text-[#1c1815] flex flex-col justify-between overflow-hidden selection:bg-[#1c1815] selection:text-[#fbdbc6]">
       
-      {/* PURE ARTWORK BACKDROP - NO PINK OVERLAYS, NO BLEND DISTORTIONS */}
-      <div className="pointer-events-none fixed inset-0 flex items-center justify-center -z-10 select-none overflow-hidden">
+      {/* BIG FULL-PAGE BACKGROUND IMAGE (OBJECT-COVER, FULL BLEED, SLIGHT BLUR) */}
+      <div className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/gksky-logo.jpg"
-          alt="GK Sky Artwork Backdrop"
-          className="w-full h-full max-w-[950px] max-h-[85vh] object-contain opacity-80"
+          alt="GK Sky Background"
+          className="w-full h-full object-cover filter blur-[3px] scale-105"
         />
       </div>
 
@@ -75,7 +75,7 @@ export default function Home() {
 
         {/* Telegram Direct Header Action */}
         <div className="flex items-center gap-2">
-          <div className="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/15 text-[#1c1815] text-[11px] font-medium">
+          <div className="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/15 text-[#1c1815] text-[11px] font-medium backdrop-blur-sm">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c85f40] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#c85f40]"></span>
@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Single-Screen Hero (Directly Over Artwork, No Distortions) */}
+      {/* Main Single-Screen Hero (Directly Over Blurred Full-Bleed Artwork) */}
       <main className="relative z-10 w-full max-w-4xl mx-auto px-5 sm:px-8 my-auto text-center flex-1 flex flex-col items-center justify-center space-y-4 sm:space-y-6 shrink min-h-0">
         
         {/* Status Pill */}
@@ -106,27 +106,27 @@ export default function Home() {
         </div>
 
         {/* Primary Headline */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1c1815] leading-[1.08] max-w-3xl drop-shadow-[0_1px_1px_rgba(251,219,198,0.8)]">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1c1815] leading-[1.08] max-w-3xl drop-shadow-[0_1px_2px_rgba(251,219,198,0.9)]">
           Something exceptional is yet to come.
         </h1>
 
         {/* Required One-Row Tagline */}
-        <p className="text-xs sm:text-base lg:text-lg text-[#1c1815] font-bold tracking-tight whitespace-normal sm:whitespace-nowrap px-2 drop-shadow-[0_1px_1px_rgba(251,219,198,0.8)]">
+        <p className="text-xs sm:text-base lg:text-lg text-[#1c1815] font-bold tracking-tight whitespace-normal sm:whitespace-nowrap px-2 drop-shadow-[0_1px_2px_rgba(251,219,198,0.9)]">
           This is the new official digital home of <span className="underline decoration-[#c85f40] underline-offset-4">Gagan Kumar</span> (<span className="text-[#c85f40]">GK Sky</span>).
         </p>
 
         {/* Minimal SEO Badges */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 text-[11px] sm:text-xs text-[#1c1815] font-semibold pt-1">
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 backdrop-blur-xs">
             Web Developer
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 backdrop-blur-xs">
             MERN Stack
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 backdrop-blur-xs">
             App Developer
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 flex items-center gap-1">
+          <span className="px-3 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 backdrop-blur-xs flex items-center gap-1">
             <MapPin className="w-3 h-3 text-[#c85f40]" />
             Bangalore
           </span>
@@ -149,7 +149,7 @@ export default function Home() {
           {/* Send Email Action */}
           <a
             href={`mailto:${email}`}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/12 hover:bg-[#1c1815]/18 border border-[#1c1815]/25 text-[#1c1815] font-semibold text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/12 hover:bg-[#1c1815]/18 border border-[#1c1815]/25 text-[#1c1815] font-semibold text-xs sm:text-sm transition-all duration-200 active:scale-[0.98] backdrop-blur-xs"
           >
             <Mail className="w-3.5 h-3.5 text-[#c85f40]" />
             <span>Email</span>
@@ -158,7 +158,7 @@ export default function Home() {
           {/* Copy Email Button */}
           <button
             onClick={handleCopy}
-            className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/10 hover:bg-[#1c1815]/15 border border-[#1c1815]/25 text-[#1c1815] font-semibold text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-3 rounded-xl bg-[#1c1815]/10 hover:bg-[#1c1815]/15 border border-[#1c1815]/25 text-[#1c1815] font-semibold text-xs sm:text-sm transition-all duration-200 active:scale-[0.98] backdrop-blur-xs"
             title="Copy email address"
           >
             {copied ? (
