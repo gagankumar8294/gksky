@@ -39,18 +39,8 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-[100dvh] max-h-[100dvh] w-full text-[#1c1815] flex flex-col justify-between overflow-hidden selection:bg-[#1c1815] selection:text-[#fbdbc6]">
+    <div className="relative h-[100dvh] max-h-[100dvh] w-full bg-[#fbdbc6] text-[#1c1815] flex flex-col justify-between overflow-hidden selection:bg-[#1c1815] selection:text-[#fbdbc6]">
       
-      {/* BIG FULL-PAGE BACKGROUND IMAGE (OBJECT-COVER, FULL BLEED, SLIGHT BLUR) */}
-      <div className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/gksky-logo.jpg"
-          alt="GK Sky Background"
-          className="w-full h-full object-cover filter blur-[3px] scale-105"
-        />
-      </div>
-
       {/* Top Navbar */}
       <header className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 pt-4 sm:pt-6 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2.5 sm:gap-3">
@@ -75,7 +65,7 @@ export default function Home() {
 
         {/* Telegram Direct Header Action */}
         <div className="flex items-center gap-2">
-          <div className="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/15 text-[#1c1815] text-[11px] font-medium backdrop-blur-sm">
+          <div className="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/15 text-[#1c1815] text-[11px] font-medium">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c85f40] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#c85f40]"></span>
@@ -96,9 +86,19 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Single-Screen Hero (Directly Over Blurred Full-Bleed Artwork) */}
+      {/* Main Hero Section: STRICTLY BOUNDED BETWEEN TOP NAV AND FOOTER */}
       <main className="relative z-10 w-full max-w-4xl mx-auto px-5 sm:px-8 my-auto text-center flex-1 flex flex-col items-center justify-center space-y-4 sm:space-y-6 shrink min-h-0">
         
+        {/* BIGGER SIZE & SOFT BLURRED BACKGROUND IMAGE ONLY BETWEEN NAV AND FOOTER */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center -z-10 select-none overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/gksky-logo.jpg"
+            alt="GK Sky Background"
+            className="w-full max-w-2xl sm:max-w-3xl max-h-[65vh] sm:max-h-[70vh] object-contain filter blur-[5px] opacity-75 scale-100"
+          />
+        </div>
+
         {/* Status Pill */}
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#1c1815]/10 border border-[#1c1815]/20 text-[#1c1815] text-[11px] sm:text-xs font-semibold backdrop-blur-xs">
           <Sparkles className="w-3 h-3 text-[#c85f40]" />
