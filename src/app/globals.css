@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090a0f;
-  --foreground: #f3f4f6;
+  --background: #fbdbc6;
+  --foreground: #1c1815;
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(28, 24, 21, 0.08);
+  --accent: #c85f40;
+  --accent-soft: rgba(200, 95, 64, 0.12);
 }
 
 @theme inline {
@@ -12,40 +16,75 @@
   --font-mono: var(--font-geist-mono);
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #fbdbc6;
+  color: #1c1815;
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-  selection-background-color: #6366f1;
-  selection-color: #ffffff;
+  selection-background-color: #1c1815;
+  selection-color: #fbdbc6;
 }
 
-/* Custom glow animations and utilities */
-@keyframes pulseGlow {
+/* Custom Soft Animations */
+@keyframes floatSlow {
   0%, 100% {
-    opacity: 0.4;
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes warmPulse {
+  0%, 100% {
+    opacity: 0.6;
     transform: scale(1);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(1.05);
+    opacity: 0.9;
+    transform: scale(1.08);
   }
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 8s ease-in-out infinite;
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-.glass-card {
-  background: rgba(17, 24, 39, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
 }
 
-.glass-card:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+.animate-warm-pulse {
+  animation: warmPulse 8s ease-in-out infinite;
+}
+
+/* Porcelain Glass Cards */
+.porcelain-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(28, 24, 21, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(110, 60, 40, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.porcelain-card:hover {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(200, 95, 64, 0.25);
+  box-shadow: 0 20px 40px -12px rgba(110, 60, 40, 0.14);
+}
+
+/* Texture Pattern */
+.bg-grain {
+  background-image: radial-gradient(rgba(28, 24, 21, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
 }

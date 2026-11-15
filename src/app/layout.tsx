@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,20 +12,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#fbdbc6",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  title: "Gagan Kumar | Web & App Developer (gksky)",
+  title: "GK Sky — Digital Atelier & Creations",
   description:
-    "Portfolio of Gagan Kumar (gksky) — Full-stack Web Developer and Mobile App Developer crafting next-generation digital experiences.",
+    "GK Sky — The creative digital space of Gagan Kumar. Exploring cutting-edge web craftsmanship, mobile architectures, and future-forward digital products.",
   keywords: [
+    "GK Sky",
     "Gagan Kumar",
     "gksky",
-    "gagankumar8294",
-    "Web Developer",
-    "App Developer",
-    "Full Stack Developer",
-    "Next.js",
-    "React Native",
-    "Portfolio",
+    "Digital Atelier",
+    "Web Craft",
+    "Mobile App Architecture",
+    "Creative Studio",
   ],
   authors: [{ name: "Gagan Kumar", url: "https://github.com/gagankumar8294" }],
   creator: "Gagan Kumar",
@@ -33,16 +38,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://github.com/gagankumar8294/gksky",
-    title: "Gagan Kumar | Web & App Developer",
+    title: "GK Sky — Digital Atelier & Creations",
     description:
-      "Crafting performant web applications and intuitive mobile solutions.",
-    siteName: "Gagan Kumar Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Gagan Kumar | Web & App Developer",
-    description:
-      "Crafting performant web applications and intuitive mobile solutions.",
+      "The creative digital space of Gagan Kumar. Building refined web & mobile experiences.",
+    siteName: "GK Sky",
   },
 };
 
@@ -52,8 +51,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark`}>
-      <body className="min-h-screen bg-[#090a0f] text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="min-h-screen bg-[#fbdbc6] text-[#1c1815] antialiased">
         {children}
       </body>
     </html>
