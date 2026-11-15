@@ -1,6 +1,6 @@
-# GK.SKY — Gagan Kumar Portfolio
+# GK.SKY — Gagan Kumar (Official Launch Site)
 
-Personal portfolio and launch showcase for **Gagan Kumar**, Full-Stack Web & Mobile App Developer.
+The official new website for **Gagan Kumar** (known online as **gagan kumar potterhead** / **GK Sky**).
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)](https://nextjs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com)
@@ -10,39 +10,35 @@ Personal portfolio and launch showcase for **Gagan Kumar**, Full-Stack Web & Mob
 
 ## 🌟 About
 
-Gagan Kumar is a developer specializing in:
-- **Web Development**: Next.js, React, TypeScript, Tailwind CSS, REST & GraphQL APIs.
-- **Mobile App Development**: React Native, cross-platform Android & iOS applications, performant native bridges.
+- **Developer**: Gagan Kumar (`gagan kumar potterhead` / `GK Sky`)
+- **Location**: Bangalore, India
+- **Specializations**:
+  - Web Development
+  - MERN Stack Web Development (React, Next.js, Node.js)
+  - Mobile App Development (React Native, Android & iOS)
 
-## 🚀 Getting Started
+## 📡 SEO & Indexing
 
-To run the portfolio locally:
+Optimized for search engines with:
+- Native OpenGraph and Twitter cards
+- `robots.txt` and `sitemap.xml` routes
+- JSON-LD Structured Data (`Person` & `WebSite` schema.org markup)
+
+## 💬 Contact
+
+- **Telegram**: [@gagankumarpotterhood](https://t.me/gagankumarpotterhood)
+- **Email**: gagankumar8294@gmail.com
+- **Location**: Bangalore, Karnataka, India
+
+## 🚀 Development
 
 ```bash
-# Clone the repository
-git clone https://github.com/gagankumar8294/gksky.git
-
-# Enter project directory
-cd gksky
-
 # Install dependencies
 npm install
 
-# Start the development server
+# Run locally
 npm run dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📦 Production Build
-
-```bash
+# Production build
 npm run build
-npm start
 ```
-
-## 📬 Contact & Links
-
-- **Email**: gagankumar8294@gmail.com
-- **GitHub**: [@gagankumar8294](https://github.com/gagankumar8294)
-- **Repository**: [gagankumar8294/gksky](https://github.com/gagankumar8294/gksky)
