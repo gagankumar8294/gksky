@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -169,6 +170,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#fbdbc6] text-[#1c1815] antialiased">
+        <AnalyticsTracker />
         {children}
       </body>
     </html>
