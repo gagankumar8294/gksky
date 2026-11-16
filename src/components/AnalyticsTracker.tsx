@@ -35,7 +35,7 @@ export default function AnalyticsTracker() {
       process.env.NEXT_PUBLIC_ANALYTICS_SYNC_URL ||
       (window.location.hostname === "localhost"
         ? "http://localhost:3001/api/analytics/sync"
-        : "/api/analytics/sync");
+        : "https://admin.gksky.in/api/analytics/sync");
 
     // Sync function
     const syncEvents = (eventsToSend: typeof pendingEvents.current) => {
