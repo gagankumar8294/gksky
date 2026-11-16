@@ -106,23 +106,8 @@ export default function AnalyticsTracker() {
 
     window.addEventListener("click", handleClick, { passive: true });
 
-    // Periodic heartbeat sync (every 30 seconds)
-    const interval = setInterval(() => {
-      const duration = Math.round((Date.now() - sessionStartTime.current) / 1000);
-      syncEvents([
-        {
-          type: "heartbeat",
-          path: window.location.pathname || "/",
-          title: document.title,
-          label: `Browsing duration: ${duration}s`,
-          timestamp: new Date().toISOString(),
-        },
-      ]);
-    }, 30000);
-
     return () => {
       window.removeEventListener("click", handleClick);
-      clearInterval(interval);
     };
   }, []);
 
