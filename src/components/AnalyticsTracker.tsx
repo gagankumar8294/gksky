@@ -49,23 +49,22 @@ export default function AnalyticsTracker() {
         events: eventsToSend,
       });
 
-      if (navigator.sendBeacon) {
-        try {
-          const blob = new Blob([payload], { type: "application/json" });
-          navigator.sendBeacon(analyticsEndpoint, blob);
-          return;
-        } catch {
-          // fallback to fetch
-        }
-      }
-
       fetch(analyticsEndpoint, {
         method: "POST",
+        mode: "cors",
         headers: { "Content-Type": "application/json" },
         body: payload,
         keepalive: true,
       }).catch(() => {
-        // non-blocking
+        // Fallback to sendBeacon if fetch fails
+        if (navigator.sendBeacon) {
+          try {
+            const blob = new Blob([payload], { type: "application/json" });
+            navigator.sendBeacon(analyticsEndpoint, blob);
+          } catch {
+            // silent
+          }
+        }
       });
     };
 
