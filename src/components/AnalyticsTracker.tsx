@@ -32,10 +32,9 @@ export default function AnalyticsTracker() {
 
     // Determine API endpoint
     const analyticsEndpoint =
-      process.env.NEXT_PUBLIC_ANALYTICS_SYNC_URL ||
-      (window.location.hostname === "localhost"
+      window.location.hostname === "localhost"
         ? "http://localhost:3001/api/analytics/sync"
-        : "https://admin.gksky.in/api/analytics/sync");
+        : "https://admin.gksky.in/api/analytics/sync";
 
     // Sync function
     const syncEvents = (eventsToSend: typeof pendingEvents.current) => {
