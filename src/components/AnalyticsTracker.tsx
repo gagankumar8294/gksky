@@ -27,6 +27,9 @@ export default function AnalyticsTracker() {
       sessionStorage.setItem("gksky_session_id", sessionId);
     }
 
+    // Automatic Domain / Subdomain identification
+    const currentDomain = window.location.hostname.replace(/^www\./, "") || "gksky.in";
+
     // Determine API endpoint
     const analyticsEndpoint =
       process.env.NEXT_PUBLIC_ANALYTICS_SYNC_URL ||
@@ -41,6 +44,7 @@ export default function AnalyticsTracker() {
       const payload = JSON.stringify({
         sessionId,
         deviceId,
+        domain: currentDomain,
         userAgent: navigator.userAgent,
         referrer: document.referrer || "",
         events: eventsToSend,
